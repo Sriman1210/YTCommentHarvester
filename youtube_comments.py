@@ -4,7 +4,7 @@ import time
 import random
 
 # Your YouTube Data API v3 key
-api_key = 'AIzaSyBuQkGeyyKu_l1nz_0upf-thCMqcnfYZAs'  # Replace with your YouTube Data API Key
+api_key = 'DEMO API KEY'  # Replace with your YouTube Data API Key
 
 # Build the YouTube API client
 youtube = build('youtube', 'v3', developerKey=api_key)
@@ -39,7 +39,7 @@ def get_top_video_ids(channel_id):
         channelId=channel_id,
         maxResults=30,
         type='video',
-        order='date'  # Order by date or relevance
+        order='date'  
     )
     try:
         while request and len(video_ids) < 30:
@@ -76,7 +76,7 @@ def get_top_comments(video_id):
         print(f"Error fetching comments for video {video_id}: {e}")
     return comments[:30]  # Ensure we only return 30 comments
 
-# Load the CSV file with YouTube channel links
+# Load the CSV file 
 df = pd.read_csv('YT_Links.csv')
 
 # Extract channel IDs from the CSV file
